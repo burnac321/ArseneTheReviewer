@@ -1,0 +1,31 @@
+# wrangler.toml
+name = "arsene-the-reviewer"
+type = "pages"
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+pages_build_output_dir = ".next"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+output_dir = ".next"
+
+[build.upload]
+format = "directory"
+
+[vars]
+GITHUB_REPO = "burnac321/ArseneTheReviewer"
+CONTENT_PATH = "content/reviews"
+MEDIA_PATH = "content/media"
+SITE_URL = "https://arsenereviews.com"
+ADMIN_USERNAME = "arsene"
+ADMIN_PASSWORD = "YOUR_ADMIN_PASSWORD_HASH"
+
+[[redirects]]
+from = "/admin/*"
+to = "/admin.html"
+status = 200
+
+[[kv_namespaces]]
+binding = "DRAFTS_KV"
+id = "drafts-store"
+preview_id = "drafts-store-preview"
