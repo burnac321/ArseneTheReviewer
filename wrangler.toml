@@ -1,0 +1,13 @@
+name = "arsene-reviews"
+type = "pages"
+account_id = "YOUR_ACCOUNT_ID"
+pages_build_output_dir = ".next"
+
+[env.production]
+GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"
+GITHUB_REPO = "yourusername/arsene-reviews-content"
+ADMIN_PASSWORD = "your-secure-password-here"
+
+[vars]
+SITE_URL = "https://arsenereviews.com"
+CONTENT_BRANCH = "main"
